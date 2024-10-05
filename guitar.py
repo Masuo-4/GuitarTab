@@ -33,7 +33,7 @@ for guitar in strings:
                 mfcc=getMfcc(os.path.join(pathname, filename))
                 sound_training.append(mfcc.T)    # sound_trainingにmfccの値を追加
                 label=numpy.full((mfcc.shape[1] ,), 
-                strings.index(guitar), dtype=int)   # labelをstringsのindexで全て初期化# numpy.int→intに変更
+                strings.index(guitar), dtype=numpy.int)   # labelをstringsのindexで全て初期化# numpy.int→intに変更
                 guitar_training.append(label)  # guitar_trainingにラベルを追加
 
 sound_training=numpy.concatenate(sound_training)  # ndarrayを結合
