@@ -21,7 +21,7 @@ def download_youtube_audio(youtube_url, output_path):
 
 # メイン処理
 if __name__ == "__main__":
-    youtube_url = "https://www.youtube.com/watch?v=1H1Eyk6iAIg"  # YouTubeの動画URL
+    youtube_url = "https://www.youtube.com/watch?v=39GlEuHX3qk"  # YouTubeの動画URL
     output_path = "output"  # 出力ディレクトリ
 
     # 出力ディレクトリが存在しない場合は作成

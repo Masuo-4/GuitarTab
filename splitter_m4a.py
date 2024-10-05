@@ -10,7 +10,7 @@ def load_m4a_as_wav(m4a_filename):
     return wav_filename
 
 # 音のピークを検出し、音ごとに分割
-def split_audio_by_notes(wav_filename, output_dir, silence_threshold=-17.0):
+def split_audio_by_notes(wav_filename, output_dir, silence_threshold=-19.0):
     y, sr = librosa.load(wav_filename, sr=None)
     envelope = librosa.onset.onset_strength(y=y, sr=sr)
     onset_frames = librosa.onset.onset_detect(onset_envelope=envelope, sr=sr)
@@ -32,7 +32,7 @@ def split_audio_by_notes(wav_filename, output_dir, silence_threshold=-17.0):
 
 # メイン処理
 def main():
-    m4a_filename = "output/1.m4a"  # 処理するM4Aファイルのパス
+    m4a_filename = "output/6.m4a"  # 処理するM4Aファイルのパス
     output_dir = "split_notes"  # 分割後の音を保存するディレクトリ
 
     if not os.path.exists(output_dir):
