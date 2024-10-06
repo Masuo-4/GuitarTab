@@ -3,7 +3,7 @@ from pydub import AudioSegment
 import librosa
 
 # 音のピークを検出し、音ごとに分割
-def split_audio_by_notes(wav_filename, output_dir, silence_threshold=-17.0):
+def split_audio_by_notes(wav_filename, output_dir, silence_threshold=-30.0):
     y, sr = librosa.load(wav_filename, sr=None)
     envelope = librosa.onset.onset_strength(y=y, sr=sr)
     onset_frames = librosa.onset.onset_detect(onset_envelope=envelope, sr=sr)
@@ -25,7 +25,7 @@ def split_audio_by_notes(wav_filename, output_dir, silence_threshold=-17.0):
 
 # メイン処理
 def main():
-    wav_filename = "output/1.wav"  # 処理するWAVファイルのパス
+    wav_filename = "output/3.wav"  # 処理するWAVファイルのパス
     output_dir = "split_notes"  # 分割後の音を保存するディレクトリ
 
     if not os.path.exists(output_dir):
